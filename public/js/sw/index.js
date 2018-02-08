@@ -3,7 +3,8 @@ self.addEventListener('install', function(event) {
     caches.open('wittr-static-v1').then(function(cache) {
       return cache.addAll([
         '/',
-        'js/main.css',
+        'js/main.js',
+        'css/main.css',
         'imgs/icon.png'
       ]);
     })
