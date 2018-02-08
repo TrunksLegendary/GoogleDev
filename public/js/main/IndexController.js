@@ -11,15 +11,20 @@ export default function IndexController(container) {
   this._registerServiceWorker();
 }
 
-IndexController.prototype._registerServiceWorker = function(reg) {
+
+IndexController.prototype._registerServiceWorker = function() {
   // TODO: register service worker
-  if (!navagator.serviceWorker) return;
-    navigator.serviceWorker.register('/sw.js').then(function(reg) {
-      console.log('ServiceWorker registered Successfully!');
-    }).catch(function(err) {
-      console.log('ServiceWroker failed to register.');
-    });
-  }
+if (!navigator.serviceWorker) return;
+
+navigator.serviceWorker.register('sw.js').then(function() {
+  console.log("Registered service worker!");
+}).catch(function() {
+  console.log('Registration failed!');
+});
+
+}
+
+
 
 // open a connection to the server for live updates
 IndexController.prototype._openSocket = function() {
