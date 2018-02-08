@@ -1,7 +1,8 @@
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    new Response('Hello <b>World</b>', {
-      headers: {'foo': 'bar'}
-    })
-  );
+  if (event.request.url.endsWith('.jpg')) {
+    event.respondWith(
+      fetch('/imgs/dr-evil.gif')
+    );
+  }
+  
 });
