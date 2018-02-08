@@ -1,7 +1,11 @@
-self.addEventListener('fetch', function(event) {
-  if (event.request.url.endsWith('.jpg')) {
-      event.respondWith(
-        fetch('/imgs/dr-evil.gif')
-      );
-    }
-});
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open('wittr-static-v1').then(function(cache) {
+      return cache.addAll([
+        '/',
+        'js/main.css',
+        'imgs/icon.png'
+      ]);
+    })
+  );
+});  
