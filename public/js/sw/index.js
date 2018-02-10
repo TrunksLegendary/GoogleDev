@@ -1,5 +1,5 @@
-var staticCacheName = 'wittr-static-v2';
-//234235
+var staticCacheName = 'wittr-static-v3';
+//234234342234234sdfsdfgdfsgdfsgddfgdfgdsfg
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(staticCacheName).then(function(cache) {
@@ -36,4 +36,12 @@ self.addEventListener('fetch', function(event) {
       return response || fetch(event.request);
     })
   );
+});
+//qweqwasdasdsd
+// TODO: listen for the "message" event, and call
+// skipWaiting if you get the appropriate message
+self.addEventListener('message', function(event){
+  if (event.data.action == 'skipWaiting') {
+    self.skipWaiting();
+  }
 });
