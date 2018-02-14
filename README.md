@@ -1,3 +1,7 @@
-# GoogleDev
+# Udacity - Grow with Google Challenge Scholarship
 
-Setup NodeJS and NPM
+
+Grow with Google Challenge Scholarship
+
+
+Web development using Javascript and a look at the Google ServiceWorker model.
